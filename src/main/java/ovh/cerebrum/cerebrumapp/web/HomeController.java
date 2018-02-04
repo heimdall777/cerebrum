@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @Slf4j
-@RequestMapping("/api/v0.1")
+@RequestMapping("/api")
 public class HomeController {
 
     private String VERSION = "1.0";
