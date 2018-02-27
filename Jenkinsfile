@@ -1,6 +1,8 @@
 #!/usr/bin/env groovy
 
 node {
+   def nodeHome = tool name: 'node-8.9.4', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+   env.PATH = "${nodeHome}/bin:${env.PATH}" 
    checkout scm
    echo "Build number: ${BUILD_ID}"
    
