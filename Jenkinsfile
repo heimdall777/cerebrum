@@ -18,7 +18,7 @@ node {
    }
 
    stage ('Run new container') {
-       sh 'docker run -d -p 8000:8000 -t cerebrumovh/cerebrum-app --name cerebrum-app'
+       sh 'docker run -d -p 8000:8000 --name cerebrum-app cerebrumovh/cerebrum-app'
    }
 }
 
