@@ -1,1 +1,1 @@
-echo "Build: ${BUILD}"
+echo "Build: ${BUILD_ID}"
