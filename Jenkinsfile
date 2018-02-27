@@ -6,8 +6,8 @@ node {
    
    stage ('Removing old container') {
        try {
-        sh 'docker stop cerebrumovh/cerebrum-app'
-        sh 'docker rm cerebrumovh/cerebrum-app'
+        sh 'docker stop cerebrum-app'
+        sh 'docker rm cerebrum-app'
        } catch (err) {
            echo err.toString()
        }
@@ -18,7 +18,7 @@ node {
    }
 
    stage ('Run new container') {
-       sh 'docker run -d -p 8000:8000 -t cerebrumovh/cerebrum-app'
+       sh 'docker run -d -p 8000:8000 -t cerebrumovh/cerebrum-app --name cerebrum-app'
    }
 }
 
