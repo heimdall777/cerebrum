@@ -14,7 +14,7 @@ node {
    }
 
    stage ('Build Container with latest build') {
-       sh 'cd server/ && chmod +x mvnw && ./mvnw install dockerfile:build'
+       sh 'cd server/ && mvn install dockerfile:build'
    }
 
    stage ('Run new container') {
