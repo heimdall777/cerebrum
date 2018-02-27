@@ -14,7 +14,9 @@ node {
    }
 
    stage ('Build Container with latest build') {
+       sh 'ls -la'
        sh 'cd server'
+       sh 'ls -la'
        sh 'chmod +x mvnw'
        sh './mvnw install dockerfile:build'
        sh 'cd ..'
