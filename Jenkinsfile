@@ -9,7 +9,7 @@ node {
         sh 'docker stop cerebrumovh/cerebrum-app'
         sh 'docker rm cerebrumovh/cerebrum-app'
        } catch (err) {
-           echo err
+           echo err.toString()
        }
    }
 
