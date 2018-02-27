@@ -5,11 +5,16 @@ node {
    echo "Build number: ${BUILD_ID}"
    
    stage ('Removing old container') {
-       sh 'docker stop cerebrumovh/cerebrum-app'
-       sh 'docker rm cerebrumovh/cerebrum-app'
+       try {
+        sh 'docker stop cerebrumovh/cerebrum-app'
+        sh 'docker rm cerebrumovh/cerebrum-app'
+       } catch (err) {
+           echo err
+       }
    }
 
    stage ('Build Container with latest build') {
+       sh "chmod +x server/mvnw"
        sh './server/mvnw install dockerfile:build'
    }
 
