@@ -8,7 +8,7 @@ export class HelloService {
   constructor(private http: Http) { }
 
   getWelcomeMessage() {
-    return this.http.get('http://cerebrum-app/api/greeting').map(
+    return this.http.get('http://127.0.0.1:8000/api/greeting').map(
       (response: Response) => {
         const welcome = response.json();
         console.log(welcome);

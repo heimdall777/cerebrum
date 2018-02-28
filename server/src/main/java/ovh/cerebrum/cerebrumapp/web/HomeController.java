@@ -22,7 +22,6 @@ public class HomeController {
         this.greetingService = greetingService;
     }
 
-    @CrossOrigin(origins = "http://cerebrum-ui")
     @GetMapping("/greeting")
     public Greeting homeSite() {
         Optional<Greeting> greetingOpt =this.greetingService.findById(1);
