@@ -52,7 +52,7 @@ node {
 
     stage ('Build Container for UI with latest build') {
         dir ('ui') {
-           sh 'docker build -t cerebrum/cerebrum-ui .'
+           sh 'docker build -t cerebrumovh/cerebrum-ui .'
         }
     }
 
