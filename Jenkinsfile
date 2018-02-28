@@ -7,7 +7,7 @@ node {
 
 
     stage('check tools') {
-        sh 'java -v'
+        sh 'java -version'
         sh "node -v"
         sh "npm -v"
     }
