@@ -57,7 +57,7 @@ node {
     }
 
     stage ('Deploy UI container') {
-       sh 'docker run -d -p 4200:80 --name cerebrum-ui cerebrumovh/cerebrum-ui'
+       sh 'docker run -d -p 4200:80 --name cerebrum-ui --link cerebrum-app:cerebrum-app cerebrumovh/cerebrum-ui'
     }
 }
 
