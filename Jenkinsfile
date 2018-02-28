@@ -44,18 +44,6 @@ node {
        }
     }
 
-    stage('ui tests') {
-        dir ('ui') {
-            try {
-                sh "ng test"
-            } catch(err) {
-                throw err
-            } finally {
-                step([$class: 'JUnitResultArchiver', testResults: '**/target/test-results/karma/TESTS-*.xml'])
-            }
-        }
-    }
-
     stage ('Build UI') {
         dir ('ui') {
            sh 'ng build'
