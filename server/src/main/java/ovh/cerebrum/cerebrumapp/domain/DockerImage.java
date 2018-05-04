@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "DOCKER_IMAGE")
 @Data
 @ToString
 @NoArgsConstructor
@@ -25,14 +26,16 @@ public class DockerImage {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> additionalSoftware;
 
+    public DockerImage(String osType, String osVersion) {
+        this.osType = osType;
+        this.osVersion = osVersion;
+        this.additionalSoftware = new ArrayList<>();
+    }
+
     public DockerImage(String osType, String osVersion, List<String> additionalSoftware) {
         this.osType = osType;
         this.osVersion = osVersion;
         this.additionalSoftware = additionalSoftware;
-    }
-
-    public DockerImage(String osType, String osVersion) {
-        new DockerImage(osType, osVersion, new ArrayList<>());
     }
 
 }
