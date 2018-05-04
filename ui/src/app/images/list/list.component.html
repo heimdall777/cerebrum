@@ -1,3 +1,5 @@
-<p>
-  list works!
-</p>
+<ul>
+  <li *ngFor="let image of images">
+    {{ image.osType }}: {{ image.osVersion }}
+  </li>
+</ul>
