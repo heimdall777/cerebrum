@@ -8,6 +8,9 @@ spring:
     jpa:
       database-platform: org.hibernate.dialect.H2Dialect
       database: H2
+      url: jdbc:h2:mem:dockdb;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
       show-sql: true
       properties:
         hibernate.ddl-auto: create-drop
