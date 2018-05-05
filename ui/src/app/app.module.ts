@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { ListComponent } from './images/list/list.component';
 import { RoutingModule } from './app-routing.module';
 import { GreetingsComponent } from './greetings/greetings.component';
+import { ImagesService } from './service/images.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { GreetingsComponent } from './greetings/greetings.component';
     HttpModule,
     RoutingModule
   ],
-  providers: [HelloService],
+  providers: [HelloService, ImagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
