@@ -1,5 +1,5 @@
 <ul>
   <li *ngFor="let image of images">
-    {{ image.osType }}: {{ image.osVersion }}
+    <div>{{ image.osType }}: {{ image.osVersion }}</div> <div *ngIf="image.additionalSoftware.length !== 0">Additional Software: {{ image.additionalSoftware }}</div>
   </li>
 </ul>
