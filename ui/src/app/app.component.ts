@@ -8,15 +8,8 @@ import { HelloService } from './service/hello.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  helloMessage = '';
-
-  constructor(private helloService: HelloService) { }
 
   ngOnInit() {
-    this.helloService.getWelcomeMessage().subscribe((welcome: any) => {
-      this.helloMessage = welcome.helloMessage;
-      console.log(welcome);
-    });
   }
 
 }

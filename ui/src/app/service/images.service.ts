@@ -5,16 +5,16 @@ import 'rxjs/Rx';
 import { environment } from '../../environments/environment';
 
 @Injectable()
-export class HelloService {
+export class ImagesService {
 
   constructor(private http: Http) { }
 
-  getWelcomeMessage() {
-    return this.http.get(environment.apiUrl + '/greeting').map(
+  getDockerImages() {
+    return this.http.get(environment.apiUrl + '/dockerimage').map(
       (response: Response) => {
-        const welcome = response.json();
-        console.log(welcome);
-        return welcome;
+        const imagesList = response.json();
+        console.log('Getting docker images.');
+        return imagesList;
       }
     );
   }
