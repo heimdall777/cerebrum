@@ -5,9 +5,16 @@ List of accessible images:
 <ul class="list-group">
   <li *ngFor="let image of images" class="list-group-item">
     <div class="display-6">{{ image.osType }}: {{ image.osVersion }}</div>
-    <div *ngIf="image.additionalSoftware.length !== 0" class="display-6 bg-primary text-white">
+    <div *ngIf="image.additionalSoftware.length !== 0" class="display-6">
       <small>Additional Software: {{ image.additionalSoftware }}</small>
     </div>
   </li>
 </ul>
+</div>
+<div>
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="/images">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="/images">1</a></li>
+        <li class="page-item"><a class="page-link" href="/images">Next</a></li>
+    </ul>
 </div>
