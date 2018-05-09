@@ -1,5 +1,13 @@
-<ul>
-  <li *ngFor="let image of images">
-    <div>{{ image.osType }}: {{ image.osVersion }}</div> <div *ngIf="image.additionalSoftware.length !== 0">Additional Software: {{ image.additionalSoftware }}</div>
+<div class="bg-dark text-light display-5 text-center">
+List of accessible images:
+</div>
+<div>
+<ul class="list-group">
+  <li *ngFor="let image of images" class="list-group-item">
+    <div class="display-6">{{ image.osType }}: {{ image.osVersion }}</div>
+    <div *ngIf="image.additionalSoftware.length !== 0" class="display-6 bg-primary text-white">
+      <small>Additional Software: {{ image.additionalSoftware }}</small>
+    </div>
   </li>
 </ul>
+</div>
