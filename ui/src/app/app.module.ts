@@ -10,6 +10,7 @@ import { RoutingModule } from './app-routing.module';
 import { GreetingsComponent } from './greetings/greetings.component';
 import { ImagesService } from './service/images.service';
 import { NotFoundComponent } from './error/not-found/not-found.component';
+import { GeneralErrorComponent } from './error/general-error/general-error.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     AppComponent,
     ListComponent,
     GreetingsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GeneralErrorComponent
   ],
   imports: [
     BrowserModule,
