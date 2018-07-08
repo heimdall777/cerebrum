@@ -35,6 +35,8 @@ public class CerebrumAppApplication {
 
             dockerImageService.save(new DockerImage("Ubuntu", "16.04"));
             dockerImageService.save(new DockerImage("Ubuntu", "17.10"));
+            dockerImageService.save(new DockerImage("Ubuntu", "17.10"));
+            dockerImageService.save(new DockerImage("Ubuntu", "16.04", Arrays.asList("Java", "Spring")));
             dockerImageService.save(new DockerImage("Ubuntu", "16.04", Arrays.asList("Java", "Spring")));
 
             dockerImageService.findAll().forEach((DockerImage dockerImage) -> log.info(dockerImage.toString()));
