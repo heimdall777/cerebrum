@@ -3,7 +3,6 @@ package ovh.cerebrum.cerebrumapp.domain;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,7 +28,6 @@ public class DockerImage {
     public DockerImage(String osType, String osVersion) {
         this.osType = osType;
         this.osVersion = osVersion;
-        this.additionalSoftware = new ArrayList<>();
     }
 
     public DockerImage(String osType, String osVersion, List<String> additionalSoftware) {
