@@ -1,13 +1,9 @@
 package ovh.cerebrum.cerebrumapp.service;
 
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import ovh.cerebrum.cerebrumapp.domain.DockerImage;
 import ovh.cerebrum.cerebrumapp.exception.AlreadyExistException;
 import ovh.cerebrum.cerebrumapp.repository.DockerImageRepository;
-import static org.springframework.data.domain.ExampleMatcher.*;
-import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.*;
 
 import java.util.List;
 
@@ -27,22 +23,26 @@ public class DockerImageServiceImpl implements DockerImageService {
     @Override
     public DockerImage save(DockerImage dockerImage) throws AlreadyExistException {
 
-        Example<DockerImage> example = Example.of(new DockerImage(dockerImage.getOsType(), dockerImage.getOsVersion()));
+        boolean anyAdditionalSoftware = dockerImage.getAdditionalSoftware() != null;
 
-        boolean doesImageExist =
-
-                dockerImageRepository.findAll(example).size() > 0;
+        boolean doesImageExist = anyAdditionalSoftware ?
+                dockerImageRepository.findAllByOsTypeAndOsVersionAndAdditionalSoftwareIn(dockerImage.getOsType(),
+                        dockerImage.getOsVersion(),
+                        dockerImage.getAdditionalSoftware()).size() > 0 :
+                dockerImageRepository.findAllByOsTypeAndOsVersionAndAdditionalSoftwareIsNull(dockerImage.getOsType(),
+                        dockerImage.getOsVersion()).size() > 0;
 
         if (doesImageExist) {
-
             throw new AlreadyExistException();
-
         } else {
-
             return this.dockerImageRepository.save(dockerImage);
-
         }
 
+    }
+
+    @Override
+    public void deleteAll() {
+        dockerImageRepository.deleteAll();
     }
 
 }
