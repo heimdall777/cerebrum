@@ -26,7 +26,7 @@ public class DockerImageServiceTestIT {
     private DockerImageService dockerImageService;
 
     @Before
-    public void tearUp() throws AlreadyExistException {
+    public void setUp() throws AlreadyExistException {
         dockerImageService.save(new DockerImage("Ubuntu", "16.04"));
         dockerImageService.save(new DockerImage("Ubuntu", "17.10"));
         dockerImageService.save(new DockerImage("Ubuntu", "16.10", Arrays.asList("Java", "Spring")));
