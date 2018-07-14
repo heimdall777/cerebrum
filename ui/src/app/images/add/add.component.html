@@ -1,0 +1,26 @@
+<div>
+  <div class="bg-dark text-light display-5 row">
+    Add new image:
+  </div>
+  <div *ngIf="errors" class="alert alert-danger"> 
+      {{ errors }} 
+  </div>
+  <div *ngIf="success" class="alert alert-success"> 
+      Succesfully added image to repository.
+  </div>
+  <div class="row">
+  <label>Operating System</label>  
+      <input type="text" class="form-control"
+      [(ngModel)]="os.osType">
+  </div>
+  <div class="row">
+      <label>Operating System Version</label>  
+      <input
+      type="text" class="form-control"
+      [(ngModel)]="os.osVersion">
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-light" (click)="onAdd()">Add Image</button>
+    <button class="btn btn-dark" (click)="onCancel()">Cancel</button>
+  </div>
+</div>
