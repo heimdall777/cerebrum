@@ -11,8 +11,6 @@ import ovh.cerebrum.cerebrumapp.domain.Greeting;
 import ovh.cerebrum.cerebrumapp.service.DockerImageService;
 import ovh.cerebrum.cerebrumapp.service.GreetingService;
 
-import java.util.Arrays;
-
 @Slf4j
 @SpringBootApplication
 public class CerebrumAppApplication {
@@ -33,14 +31,9 @@ public class CerebrumAppApplication {
             greetingService.save(new Greeting("Hello World!"));
             log.info(greetingService.findById(1).toString());
 
-            dockerImageService.save(new DockerImage("Ubuntu", "16.04"));
-            dockerImageService.save(new DockerImage("Ubuntu", "17.10"));
-            dockerImageService.save(new DockerImage("Ubuntu", "16.04", Arrays.asList("Java", "Spring")));
-
             dockerImageService.findAll().forEach((DockerImage dockerImage) -> log.info(dockerImage.toString()));
 
         };
     }
-
 
 }

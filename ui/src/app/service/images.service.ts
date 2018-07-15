@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http,  Response } from '@angular/http';
+import { Headers, Http,  Response } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 import {Router} from "@angular/router";
 import 'rxjs/Rx';
 
 import { environment } from '../../environments/environment';
+import { Image } from '../images/model/image.model';
 
 @Injectable()
 export class ImagesService {
@@ -24,6 +25,16 @@ export class ImagesService {
       this.router.navigate(['/error']);
       return Observable.empty();
     });
+  }
+
+  createDockerImage(image: Image) {
+
+    console.log('Create image...');
+    console.log('Image: ', image);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post(environment.apiUrl + '/dockerimage/create',
+      image,
+      {headers: headers});
   }
 
 }

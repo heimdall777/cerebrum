@@ -11,6 +11,8 @@ import { GreetingsComponent } from './greetings/greetings.component';
 import { ImagesService } from './service/images.service';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { GeneralErrorComponent } from './error/general-error/general-error.component';
+import { AddComponent } from './images/add/add.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ import { GeneralErrorComponent } from './error/general-error/general-error.compo
     ListComponent,
     GreetingsComponent,
     NotFoundComponent,
-    GeneralErrorComponent
+    GeneralErrorComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [HelloService, ImagesService],
   bootstrap: [AppComponent]

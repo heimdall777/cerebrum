@@ -1,0 +1,47 @@
+<div>
+  <div class="bg-dark text-light display-5 row">
+    Add new image:
+  </div>
+  <div *ngIf="errors" class="alert alert-danger">
+    {{ errors }}
+  </div>
+  <div *ngIf="success" class="alert alert-success">
+    Succesfully added image to repository.
+  </div>
+  <div class="row">
+    <label>Operating System</label>
+    <input type="text" class="form-control" [(ngModel)]="image.osType">
+  </div>
+  <div class="row">
+    <label>Operating System Version</label>
+    <input type="text" class="form-control" [(ngModel)]="image.osVersion">
+  </div>
+  <div>
+    <!-- TODO: List of additional software -->
+    <div class="bg-dark text-light display-5 row">
+      Additional Software:
+    </div>
+    <div *ngIf="softwareToAddList.length !== 0" class="display-6">
+      <li *ngFor="let software of softwareToAddList" class="list-group-item">
+        <small>{{ software }}</small>
+      </li>
+    </div>
+  </div>
+  <div>
+    <div class="col-container">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" [(ngModel)]="additionalSoftwareToAdd">
+        </div>
+        <div class="col">
+          <button class="btn btn-light" (click)="onSoftwareAdd()">Add Software</button>
+          <button class="btn btn-dark" (click)="onSoftwareCancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-light" (click)="onAdd()">Add Image</button>
+    <button class="btn btn-dark" (click)="onCancel()">Cancel</button>
+  </div>
+</div>
