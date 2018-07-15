@@ -11,7 +11,9 @@ import { ImagesService } from '../../service/images.service';
 })
 export class AddComponent implements OnInit {
 
-  os: Image;
+  image: Image;
+  additionalSoftwareToAdd: string;
+  softwareToAddList = [];
   errors: any;
   success: boolean;
 
@@ -20,7 +22,11 @@ export class AddComponent implements OnInit {
     private imagesService: ImagesService) { }
 
   ngOnInit() {
-    this.os = new Image();
+    this.image = new Image();
+  }
+
+  onSoftwareAdd() {
+    this.softwareToAddList.push(this.additionalSoftwareToAdd);
   }
 
   onCancel() {
@@ -28,7 +34,9 @@ export class AddComponent implements OnInit {
   }
 
   onAdd() {
-    this.imagesService.createDockerImage(this.os).subscribe(
+    this.image.additionalSoftware = this.softwareToAddList;
+
+    this.imagesService.createDockerImage(this.image).subscribe(
       data => {
         console.log(data);
         this.success = true;
