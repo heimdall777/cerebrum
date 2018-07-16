@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { AboutComponent } from './shared/about/about.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     AddComponent,
     HomePageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
