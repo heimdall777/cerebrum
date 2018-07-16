@@ -7,22 +7,26 @@ import { HelloService } from './service/hello.service';
 import { HttpModule } from '@angular/http';
 import { ListComponent } from './images/list/list.component';
 import { RoutingModule } from './app-routing.module';
-import { GreetingsComponent } from './greetings/greetings.component';
 import { ImagesService } from './service/images.service';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { GeneralErrorComponent } from './error/general-error/general-error.component';
 import { AddComponent } from './images/add/add.component';
 import { FormsModule } from '@angular/forms';
+import { HomePageComponent } from './home/home-page/home-page.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    GreetingsComponent,
     NotFoundComponent,
     GeneralErrorComponent,
-    AddComponent
+    AddComponent,
+    HomePageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
