@@ -27,6 +27,11 @@ export class AddComponent implements OnInit {
 
   onSoftwareAdd() {
     this.softwareToAddList.push(this.additionalSoftwareToAdd);
+    this.additionalSoftwareToAdd = '';
+  }
+
+  onSoftwareCancel() {
+    this.additionalSoftwareToAdd = '';
   }
 
   onCancel() {
